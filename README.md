@@ -1,7 +1,5 @@
 # QGC Images collector
 
-Certainly! I can provide you with code snippets for different parts of the implementation. Here's an example to get you started:
-
 1. Retrieve Image Paths:
    ```cpp
    QStringList getImagePaths(const QString& libraryPath)
@@ -55,7 +53,7 @@ Certainly! I can provide you with code snippets for different parts of the imple
      ```
    - Then, in the `Map` class, create instances of the `ImageThumbnail` class for each image and expose them to QML for rendering on the map.
 
-I hope these code snippets give you a starting point for implementing the desired functionality. Remember to adapt them to fit your specific requirements and integrate them into the existing QGroundControl codebase.
+I hope these code snippets give you a starting point for implementing the desired functionality. Remember to adapt them to fit your specific requirements and integrate them into the existing AirosMissionControl codebase.
 
 In the project, the class responsible for rendering the map is located in the `src/QmlControls/Map` directory. The main class responsible for map rendering is `MapContainer.qml`. This QML file defines the visual representation of the map and handles interactions with the map view.
 
@@ -69,10 +67,10 @@ Here is an overview of the relevant files in the `Map` directory:
 
 4. `MapPositionIndicator.qml`: This component renders the vehicle position on the map, typically represented by an icon or marker.
 
-These files represent the key components involved in rendering the map in QGroundControl. You can explore and modify these files to add your desired image thumbnail functionality to the map view.
+These files represent the key components involved in rendering the map in AirosMissionControl. You can explore and modify these files to add your desired image thumbnail functionality to the map view.
 
 
-To add the functionality of displaying image thumbnails on the map in QGroundControl, you will need to modify the `MapContainer.qml` file, which is located in the `src/QmlControls/Map` directory.
+To add the functionality of displaying image thumbnails on the map in AirosMissionControl, you will need to modify the `MapContainer.qml` file, which is located in the `src/QmlControls/Map` directory.
 
 In `MapContainer.qml`, you can add the necessary code to handle the image thumbnail display. Here's a general outline of the steps you can follow:
 
@@ -142,4 +140,4 @@ Component.onCompleted: {
 
 Please note that the code provided above is a general guideline, and you will need to adapt it to fit your specific requirements. You may need to define additional properties, handle interactions with the thumbnails, and adjust the appearance and behavior to match your desired implementation.
 
-Remember to test your changes and ensure they integrate correctly with the existing QGroundControl codebase.
+Remember to test your changes and ensure they integrate correctly with the existing AirosMissionControl codebase.
