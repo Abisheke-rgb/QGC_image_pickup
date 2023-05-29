@@ -56,3 +56,17 @@ Certainly! I can provide you with code snippets for different parts of the imple
    - Then, in the `Map` class, create instances of the `ImageThumbnail` class for each image and expose them to QML for rendering on the map.
 
 I hope these code snippets give you a starting point for implementing the desired functionality. Remember to adapt them to fit your specific requirements and integrate them into the existing QGroundControl codebase.
+
+In the project, the class responsible for rendering the map is located in the `src/QmlControls/Map` directory. The main class responsible for map rendering is `MapContainer.qml`. This QML file defines the visual representation of the map and handles interactions with the map view.
+
+Here is an overview of the relevant files in the `Map` directory:
+
+1. `MapContainer.qml`: This is the main QML file responsible for rendering the map. It defines the MapContainer component, which contains the map view and handles user interactions, such as panning and zooming. You can modify this file to add the image thumbnail functionality.
+
+2. `MapTileSource.qml`: This file defines the tile source for the map, specifying the source URL and properties of the map tiles.
+
+3. `MapViewport.qml`: This file handles the rendering of the map view and manages the display of map elements like waypoints, vehicle positions, and flight paths.
+
+4. `MapPositionIndicator.qml`: This component renders the vehicle position on the map, typically represented by an icon or marker.
+
+These files represent the key components involved in rendering the map in QGroundControl. You can explore and modify these files to add your desired image thumbnail functionality to the map view.
