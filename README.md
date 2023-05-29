@@ -70,3 +70,76 @@ Here is an overview of the relevant files in the `Map` directory:
 4. `MapPositionIndicator.qml`: This component renders the vehicle position on the map, typically represented by an icon or marker.
 
 These files represent the key components involved in rendering the map in QGroundControl. You can explore and modify these files to add your desired image thumbnail functionality to the map view.
+
+
+To add the functionality of displaying image thumbnails on the map in QGroundControl, you will need to modify the `MapContainer.qml` file, which is located in the `src/QmlControls/Map` directory.
+
+In `MapContainer.qml`, you can add the necessary code to handle the image thumbnail display. Here's a general outline of the steps you can follow:
+
+1. Import the required modules and define any necessary variables or properties:
+```qml
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtLocation 5.15
+
+Item {
+    // ...
+
+    // Define variables or properties for image thumbnail data
+
+    // ...
+}
+```
+
+2. Create a custom QML component or item for displaying the image thumbnails:
+```qml
+Item {
+    id: imageThumbnailContainer
+
+    // ...
+
+    // Define the item properties, such as position, size, and appearance
+
+    // ...
+}
+```
+
+3. Retrieve image paths, extract metadata, and associate thumbnails with map positions:
+```qml
+function loadImages() {
+    var imagePaths = getImagePathsFromLocalLibrary(); // Implement this function to retrieve the image paths
+    for (var i = 0; i < imagePaths.length; i++) {
+        var imagePath = imagePaths[i];
+        var location = getImageLocation(imagePath); // Implement this function to extract the image metadata
+        var thumbnailItem = createThumbnailItem(imagePath, location); // Implement this function to create the thumbnail item
+        mapContainer.addMapItem(thumbnailItem, location); // Implement this function to add the thumbnail item to the map at the specific location
+    }
+}
+
+function getImagePathsFromLocalLibrary() {
+    // Implement this function to retrieve the image paths from the local library
+    // Return an array of image paths
+}
+
+function getImageLocation(imagePath) {
+    // Implement this function to extract the image metadata and retrieve the image location
+    // Return the image location as a QtPositioning.coordinate object or a custom structure
+}
+
+function createThumbnailItem(imagePath, location) {
+    // Implement this function to create the thumbnail item, which can be an Image or custom item
+    // Set the necessary properties, such as source, size, position, etc.
+    // Return the created thumbnail item
+}
+```
+
+4. Call the `loadImages` function to load and display the image thumbnails on the map:
+```qml
+Component.onCompleted: {
+    loadImages();
+}
+```
+
+Please note that the code provided above is a general guideline, and you will need to adapt it to fit your specific requirements. You may need to define additional properties, handle interactions with the thumbnails, and adjust the appearance and behavior to match your desired implementation.
+
+Remember to test your changes and ensure they integrate correctly with the existing QGroundControl codebase.
